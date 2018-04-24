@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-9">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Калькулятор</title>
+
+    <!-- Awesome - icons -->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
+    <!-- Bootstrap styles -->
+    <link href="css/bootstrap3.min.css" rel="stylesheet">
+
+    <!--custom styles -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.3.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist" id="top">
+        <li role="presentation" class="active"><a href="#wish" aria-controls="wish" role="tab" data-toggle="tab">Калькулятор
+            хотелок</a></li>
+        <li role="presentation"><a href="#pension" aria-controls="pension" role="tab" data-toggle="tab">Калькулятор
+            пенсии</a></li>
+        <li role="presentation"><a href="#calculation" aria-controls="calculation" role="tab" data-toggle="tab">Подсчет
+            пенсии</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="wish">
+            <section class="section-form">
+                <div class="container">
+                    <div class="row section-form-row">
+                        <h2 class="text-center">КАЛЬКУЛЯТОР СБЕРЕЖЕНИЙ ДЛЯ ХОТЕЛОК</h2>
+                        <h3 class="text-center">1. Вводные данные</h3>
+
+                        <div class="group_quest">
+                            <div class="col-sm-5">
+                                <div class="form-group age">
+                                    <label for="age_now_wish" class="col-sm-9 control-label">Возраст сегодня?</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control age " id="age_now_wish" placeholder="11" value="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group age">
+                                    <label for="age_aim_wish" class="col-sm-9 control-label">Возраст на момент
+                                        достижения цели?</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control age" id="age_aim_wish" placeholder="18" value="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-1 text-center send_but">
+                                <input type="button" value="-->">
+                            </div>
+
+                            <div class="form-group age-res col-sm-6">
+                                <label for="accum_years_wish" class="col-sm-9 control-label">Количество лет накопления
+                                    сбережений</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="accum_years_wish" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="separ col-sm-12"></div>
+
+                    </div><!-- end div /.row .section-form-row -->
+
+                    <div class="row section-form-row">
+
+                        <div class="form-group col-sm-5 rate">
+                            <label for="rate_wish" class="col-sm-9 control-label">Валютный курс (местная валюта/USD)?</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control income addition share deposit" id="rate_wish" placeholder="60" value="">
+                            </div>
+                        </div>
+                        <div class="separ col-sm-12"></div>
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+
+                        <div class="form-group income col-sm-5">
+                            <label for="income_wish" class="col-sm-9 control-label">Ваш ежемесячный доход (в местной валюте)?</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control income" id="income_wish" placeholder="60000" value="">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 text-center"><input type="button" value="-->">
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group income-res">
+                                <label for="income_usd_wish" class="col-sm-9 control-label">Ваш ежемесячный доход (в
+                                    долларах)</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="income_usd_wish" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group income-res">
+                                <label for="income_year_usd_wish" class="col-sm-9 control-label">Ваш годовой доход (в
+                                    долларах)</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="income_year_usd_wish" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separ col-sm-12"></div>
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+                        <div class="group_quest">
+                            <div class="form-group increase col-sm-5">
+                                <label for="income_increase" class="col-sm-9 control-label">Повышение дохода каждые 5
+                                    лет (в %)?</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="income_increase" placeholder="15" value="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="separ col-sm-12"></div>
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+
+                        <div class="form-group addit col-sm-5">
+                            <label for="addition" class="col-sm-9 control-label">Добавления к сбережениям каждые 5
+                                лет (премии, тд.) (в местной валюте)?</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control addition" id="addition" placeholder="180000" value="">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 text-center"><input type="button" value="-->">
+                        </div>
+
+                        <div class="form-group addit-res col-sm-6">
+                            <label for="addition_usd" class="col-sm-9 control-label">Добавления к сбережениям каждые
+                                5 лет (премии, тд.) (в долларах)?</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="addition_usd" placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="separ col-sm-12"></div>
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+
+                        <div class="form-group share col-sm-5">
+                            <label for="share" class="col-sm-9 control-label">Доля от доходов, выделенная для накопления сбережений (в %)?</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control share" id="share" placeholder="10" value="">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 text-center"><input type="button" id="send_share" value="-->">
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group share-res">
+                                <label for="sum_month" class="col-sm-9 control-label">Сумма ежемесячных сбережений (в местной валюте)</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="sum_month" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group share-res">
+                                <label for="sum_month_usd" class="col-sm-9 control-label">Сумма ежемесячных сбережений (в долларах)</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="sum_month_usd" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separ col-sm-12"></div>
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+
+                        <div class="form-group deposit col-sm-5">
+                            <label for="initial_deposit" class="col-sm-9 control-label">Первоначальный вклад (в местной валюте)?</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control deposit" id="initial_deposit" placeholder="300000" value="">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 text-center"><input type="button" id="send_initial_deposit" value="-->">
+                        </div>
+
+                        <div class="form-group deposit-res col-sm-6">
+                            <label for="initial_deposit_usd" class="col-sm-9 control-label">Первоначальный вклад (в долларах)</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="initial_deposit_usd" placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="separ col-sm-12"></div>
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+
+                        <div class="form-group  col-sm-5 yield-usd">
+                            <label for="year_yield" class="col-sm-9 control-label">Годовая доходность в период накопления (в %)?</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="year_yield" placeholder="8.5" value="">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 text-center"><input type="button" id="send_year_yield" value="-->">
+                        </div>
+
+                        <div class="form-group yield-res col-sm-6">
+                            <label for="nominal_yield" class="col-sm-9 control-label">Номинальная (ежемесячная) доходность (в долларах)</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="nominal_yield" placeholder="">
+                            </div>
+                        </div>
+
+
+                    </div><!-- end div /.row .section-form-row -->
+
+                    <div class="row section-form-row">
+                        <h3 class="text-center">2а. ОБЩИЙ РЕЗУЛЬТАТ: СУММЫ БУДУЩИХ НАКОПЛЕНИЙ</h3>
+                        <div class="form-group col-sm-12 ">
+                            <label for="accumulation_wish_5" class="col-sm-5 control-label">Сбережения в долларах после 5 лет</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="accumulation_wish_5" placeholder="">
+                            </div>
+
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="accumulation_wish_10" class="col-sm-5 control-label">Сбережения в долларах после 10 лет</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="accumulation_wish_10" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="accumulation_wish_15" class="col-sm-5 control-label">Сбережения в долларах после 15 лет</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="accumulation_wish_15" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="accumulation_wish_20" class="col-sm-5 control-label">Сбережения в долларах после 20 лет</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="accumulation_wish_20" placeholder="">
+                            </div>
+                        </div>
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+                        <h3 class="text-center">2б. ДЕТАЛИЗАЦИЯ РЕЗУЛЬТАТОВ: ТАБЛИЦА ЕЖЕМЕСЯЧНЫХ НАКОПЛЕНИЙ</h3>
+                        <table class="table-bordered" id="myTable" border="1">
+                        </table>
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="up"><a href="#top">Наверх</a></div>
+                </div>
+            </section>
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="pension">
+            <section class="section-form">
+                <div class="container">
+                    <div class="row section-form-row">
+                        <h2 class="text-center">КАЛЬКУЛЯТОР ПЕНСИОННЫХ СБЕРЕЖЕНИЙ</h2>
+                        <h3 class="text-center">1. Вводные данные</h3>
+
+                        <div class="group_quest">
+                            <div class="col-sm-5">
+                                <div class="form-group">
+                                    <label for="age_now" class="col-sm-9 control-label">Ваш возраст сейчас?</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control age_pens" id="age_now" placeholder="30" value="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="age_aim" class="col-sm-9 control-label">Возраст ухода на пенсию?</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control age_pens" id="age_aim" placeholder="60" value="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-1 text-center"><input type="button" value="-->">
+                            </div>
+                            <div class="form-group age-res col-sm-6 ">
+                                <label for="accum_years" class="col-sm-9 control-label">Количество лет накопления
+                                    сбережений</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="accum_years" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="separ col-sm-12"></div>
+
+                    </div><!-- end div /.row .section-form-row -->
+
+                    <div class="row section-form-row">
+                        <div class="group_quest">
+                            <div class="form-group inflat col-sm-5">
+                                <label for="inflation" class="col-sm-9 control-label">Инфляция местной валюты к доллару (в %)?</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="inflation" placeholder="2.5" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-sm-offset-1">
+                            <div class="form-group rate">
+                                <label for="rate" class="col-sm-9 control-label">Валютный курс (местная валюта/USD)?</label>
+                                <div class="col-sm-3">
+                                    <input type="text" name="rate" class="form-control income_pens today" id="rate" placeholder="60" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separ col-sm-12"></div>
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+
+                        <div class="form-group income col-sm-5">
+                            <label for="income" class="col-sm-9 control-label">Ваш ежемесячный доход (в местной валюте)?</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control income_pens" id="income" placeholder="60000" value="">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 text-center"><input type="button" id="send_income" value="-->">
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group income-res">
+                                <label for="income_usd" class="col-sm-9 control-label">Ваш ежемесячный доход (в
+                                    долларах)</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="income_usd" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <label for="income_year_usd" class="col-sm-9 control-label">Ваш годовой доход (в
+                                    долларах)</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="income_year_usd" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separ col-sm-12"></div>
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+                        <div class="group_quest">
+                            <div class="form-group desired col-sm-5">
+                                <label for="desired_income" class="col-sm-9 control-label">Желаемый ежемесячный
+                                    пассивный доход на
+                                    пенсии (% от сегодняшнего)?</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control today" id="desired_income" placeholder="80" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1 text-center"><input type="button" id="send_income_today" value="-->">
+                        </div>
+                        <div class="form-group desired col-sm-6">
+                            <label for="today_income_usd" class="col-sm-9 control-label">Желаемый ежемесячный пассивный
+                                доход на
+                                пенсии в сегодняшних деньгах (в долларах)</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="today_income_usd" placeholder="">
+                            </div>
+                        </div>
+                        <div class="separ col-sm-12"></div>
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+                        <div class="group_quest">
+                            <div class="form-group col-sm-5 yield-usd">
+                                <label for="pension_yield" class="col-sm-9 control-label">Годовая доходность в период пенсии (в %)?</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control yield" id="pension_yield" placeholder="7.5" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1 text-center"><input type="button" id="send_yield" value="-->">
+                        </div>
+                        <div class="form-group yield-res col-sm-6">
+                            <label for="month_yield" class="col-sm-9 control-label">Номинальная (ежемесячная) доходность (в долларах)</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="month_yield" placeholder="">
+                            </div>
+                        </div>
+
+                    </div><!-- end div /.row .section-form-row -->
+
+                    <div class="row section-form-row">
+
+                        <h3 class="text-center">2. НЕОБХОДИМЫЕ ПЕНСИОННЫЕ НАКОПЛЕНИЯ</h3>
+                        <div class="form-group today col-sm-5">
+                            <label for="today_income_usd_clone" class="col-sm-9 control-label">Желаемый ежемесячный
+                                пассивный доход на пенсии в сегодняшних деньгах (в долларах)</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="today_income_usd_clone" placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 text-center"><input type="button" id="send_income_today_clone" value="-->">
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group today-res">
+                                <label for="desire_month_income_inflation" class="col-sm-9 control-label">Желаемый
+                                    ежемесячный пассивный доход на пенсии учитывая инфляцию (в долларах)</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="desire_month_income_inflation"
+                                           placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group today-res">
+                                <label for="desire_year_income_inflation" class="col-sm-9 control-label">Желаемый
+                                    ежегодный пассивный доход на пенсии учитывая инфляцию (в долларах)</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="desire_year_income_inflation"
+                                           placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separ col-sm-12"></div>
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+                        <div class="group_quest">
+                            <div class="form-group summ">
+                                <label for="guarantee_amount" class="col-sm-5 control-label">Сумма накоплений, которая
+                                    обеспечивает фиксированные годовые поступления на пенсии до конца жизни (в
+                                    долларах)</label>
+                                <div class="col-sm-1 text-center"><input type="button" id="guarantee_sum" value="-->">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="guarantee_amount" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row section-form-row">
+
+                        <h3 class="text-center">3. НАКОПЛЕНИЯ И ТРАТЫ В ПЕРИОД ПЕНСИИ</h3>
+                        <table class="table-bordered" id="myTable_pension" border="1">
+                        </table>
+
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="up"><a href="#top">Наверх</a></div>
+                </div><!-- end div /.container -->
+            </section><!-- end section /.section-form -->
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="calculation">
+            <section class="section-form">
+                <div class="container">
+                    <div class="row section-form-row">
+                        <h2 class="text-center">ПОДСЧЁТ ХОТЕЛОК И ПЕНСИИ</h2>
+                        <h3 class="text-center">1. Вводные данные</h3>
+
+                        <div class="group_quest">
+                            <div class="col-sm-5">
+                                <div class="form-group">
+                                    <label for="age_now_calcul" class="col-sm-9 control-label">Ваш возраст
+                                        сейчас?</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control age_calc" id="age_now_calcul" placeholder="37" value="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="age_aim_calcul" class="col-sm-9 control-label">Возраст ухода на
+                                        пенсию?</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control age_calc" id="age_aim_calcul" placeholder="60" value="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-1 text-center"><input type="button" value="-->">
+                            </div>
+                            <div class="form-group age-res col-sm-6">
+                                <label for="accum_years_calcul" class="col-sm-9 control-label">Количество лет накопления
+                                    сбережений</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="accum_years_calcul" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="separ col-sm-12"></div>
+
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+                        <div class="group_quest">
+                            <div class="form-group inflat col-sm-5">
+                                <label for="inflation_calcul" class="col-sm-9 control-label">Инфляция местной валюты к доллару (в %)?</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="inflation_calcul" placeholder="2.5" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-sm-offset-1">
+                            <div class="form-group rate">
+                                <label for="rate_calcul" class="col-sm-9 control-label">Валютный курс (местная валюта/USD)?</label>
+                                <div class="col-sm-3">
+                                    <input type="text" name="rate_calcul" class="form-control income_calc add_calc share_calc dep_calc" id="rate_calcul" placeholder="60" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separ col-sm-12"></div>
+
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+
+                        <div class="form-group income col-sm-5">
+                            <label for="income_calcul" class="col-sm-9 control-label">Ваш ежемесячный доход (в местной валюте)?</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control income_calc" id="income_calcul" placeholder="69000" value="">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 text-center"><input type="button" value="-->">
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group income-res">
+                                <label for="income_usd_calcul" class="col-sm-9 control-label">Ваш ежемесячный доход (в
+                                    долларах)</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="income_usd_calcul" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <label for="income_year_usd_calcul" class="col-sm-9 control-label">Ваш годовой доход (в
+                                    долларах)</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="income_year_usd_calcul" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separ col-sm-12"></div>
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+                        <div class="group_quest">
+                            <div class="form-group increase col-sm-5">
+                                <label for="income_increase_calcul" class="col-sm-9 control-label">Повышение дохода
+                                    каждые 5
+                                    лет (в %)?</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="income_increase_calcul" placeholder="10" value="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="separ col-sm-12"></div>
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+
+                        <div class="form-group addit col-sm-5">
+                            <label for="addition_calcul" class="col-sm-9 control-label">Добавления к сбережениям каждые
+                                5
+                                лет (премии, тд.) (в местной валюте)?</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control add_calc" id="addition_calcul" placeholder="180000" value="">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 text-center"><input type="button" value="-->">
+                        </div>
+
+                        <div class="form-group addit-res col-sm-6">
+                            <label for="addition_usd_calcul" class="col-sm-9 control-label">Добавления к сбережениям
+                                каждые
+                                5 лет (премии, тд.) (в долларах)?</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="addition_usd_calcul" placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="separ col-sm-12"></div>
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+                        <div class="group_quest">
+                            <div class="form-group desired col-sm-5">
+                                <label for="desired_income_calcul" class="col-sm-9 control-label">Желаемый ежемесячный пассивный доход на пенсии (в долларах)?</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control " id="desired_income_calcul" placeholder="800" value="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="separ col-sm-12"></div>
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+
+                        <div class="form-group share col-sm-5">
+                            <label for="share_calcul" class="col-sm-9 control-label">Доля от доходов, выделенная для
+                                накопления сбережений (в %)?</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control share_calc" id="share_calcul" placeholder="10" value="">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 text-center"><input type="button" value="-->">
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group share-res">
+                                <label for="sum_month_calcul" class="col-sm-9 control-label">Сумма ежемесячных
+                                    сбережений (в местной валюте)</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="sum_month_calcul" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group share-res">
+                                <label for="sum_month_usd_calcul" class="col-sm-9 control-label">Сумма ежемесячных
+                                    сбережений (в долларах)</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="sum_month_usd_calcul" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separ col-sm-12"></div>
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+
+                        <div class="form-group deposit col-sm-5">
+                            <label for="initial_deposit_calcul" class="col-sm-9 control-label">Первоначальный вклад (в местной валюте)?</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control dep_calc" id="initial_deposit_calcul" placeholder="541183.2" value="">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 text-center"><input type="button" value="-->">
+                        </div>
+
+                        <div class="form-group deposit-res col-sm-6">
+                            <label for="initial_deposit_usd_calcul" class="col-sm-9 control-label">Первоначальный вклад
+                                (в долларах)</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="initial_deposit_usd_calcul" placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="separ col-sm-12"></div>
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+                        <div class="col-sm-5">
+                            <div class="form-group yield-usd">
+                                <label for="accum_yield_calcul" class="col-sm-9 control-label">Годовая доходность в период накопления (в %)?</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control yield_calc" id="accum_yield_calcul" placeholder="8.5" value="">
+                                </div>
+                            </div>
+                            <div class="form-group yield-usd">
+                                <label for="pension_yield_calcul" class="col-sm-9 control-label">Годовая доходность в период пенсии (в %)?</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control yield_calc" id="pension_yield_calcul" placeholder="7.5" value="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 text-center"><input type="button" value="-->">
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group yield-res">
+                                <label for="month_yield_accum" class="col-sm-9 control-label">Номинальная (ежемесячная) доходность (в долларах)</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="month_yield_accum" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group yield-res">
+                                <label for="month_yield_pension" class="col-sm-9 control-label">Номинальная (ежемесячная) доходность (в долларах)</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="month_yield_pension" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- end div /.row .section-form-row -->
+
+                    <div class="row section-form-row">
+                        <h3 class="text-center">2а. ОБЩИЙ РЕЗУЛЬТАТ: СУММЫ БУДУЩИХ НАКОПЛЕНИЙ</h3>
+
+                        <div class="form-group col-sm-12">
+                            <label for="accumulation_10" class="col-sm-5 control-label">Сбережения в долларах после 10
+                                лет</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="accumulation_10" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="accumulation_15" class="col-sm-5 control-label">Сбережения в долларах после 15
+                                лет</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="accumulation_15" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="accumulation_20" class="col-sm-5 control-label">Сбережения в долларах после 20
+                                лет</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="accumulation_20" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="accumulation_25" class="col-sm-5 control-label">Сбережения в долларах после 25
+                                лет</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="accumulation_25" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="accumulation_30" class="col-sm-5 control-label">Сбережения в долларах после 30
+                                лет</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="accumulation_30" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="accumulation_35" class="col-sm-5 control-label">Сбережения в долларах после 35
+                                лет</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="accumulation_35" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="accumulation_40" class="col-sm-5 control-label">Сбережения в долларах после 40
+                                лет</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="accumulation_40" placeholder="">
+                            </div>
+                        </div>
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+                        <h3 class="text-center">2б. ДЕТАЛИЗАЦИЯ РЕЗУЛЬТАТОВ: ТАБЛИЦА ЕЖЕМЕСЯЧНЫХ НАКОПЛЕНИЙ</h3>
+                        <table class="table-bordered" id="myTable_calcul" border="1">
+                        </table>
+                    </div>
+                    <div class="row section-form-row">
+                        <h3 class="text-center">3. НЕОБХОДИМЫЕ НАКОПЛЕНИЯ</h3>
+                    </div>
+                    <div class="row section-form-row">
+
+                        <div class="form-group today col-sm-5">
+                            <label for="today_income_usd_calcul_clone" class="col-sm-9 control-label">Желаемый ежемесячный
+                                пассивный доход на пенсии в сегодняшних деньгах (в долларах)</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="today_income_usd_calcul_clone" placeholder="">
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-1 text-center"><input type="button" id="send_income_today_calcul_clone" value="-->">
+                        </div>
+                        <div class="col-sm-6">
+
+                            <div class="form-group today-res">
+                                <label for="desire_month_income_inflation_calcul" class="col-sm-9 control-label">Желаемый
+                                    ежемесячный пассивный доход на пенсии учитывая инфляцию (в долларах)</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="desire_month_income_inflation_calcul"
+                                           placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group today-res">
+                                <label for="desire_year_income_inflation_calcul" class="col-sm-9 control-label">Желаемый
+                                    ежегодный пассивный доход на пенсии учитывая инфляцию (в долларах)</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="desire_year_income_inflation_calcul"
+                                           placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separ col-sm-12"></div>
+                    </div><!-- end div /.row .section-form-row -->
+                    <div class="row section-form-row">
+                        <div class="group_quest">
+                            <div class="form-group summ">
+                                <label for="guarantee_amount_calcul" class="col-sm-5 control-label">Сумма накоплений, которая
+                                    обеспечивает фиксированные годовые поступления на пенсии до конца жизни (в
+                                    долларах)</label>
+                                <div class="col-sm-1 text-center"><input type="button" id="guarantee_sum_calcul" value="-->">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="guarantee_amount_calcul" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row section-form-row">
+                        <h3 class="text-center">4. НАКОПЛЕНИЯ И ТРАТЫ В ПЕРИОД ПЕНСИИ</h3>
+                        <table class="table-bordered" id="myTable_pension_calcul" border="1">
+                        </table>
+                    </div>
+                    <div class="up"><a href="#top">Наверх</a></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Bootstrap -->
+<script src="js/bootstrap3.min.js"></script>
+
+</body>
+</html>
